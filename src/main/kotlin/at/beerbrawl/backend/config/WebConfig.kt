@@ -3,17 +3,18 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 import org.springframework.web.filter.CorsFilter
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
-class WebConfig {
+class WebConfig: WebMvcConfigurer {
 
     @Bean
     fun corsFilter(): CorsFilter {
         val corsConfiguration = CorsConfiguration()
         corsConfiguration.allowCredentials = true
-        corsConfiguration.addAllowedOrigin("https://beerbrawl-pfeilheim-frontend.vercel.app") // specify frontend origin
-        corsConfiguration.addAllowedHeader("*") // allow all headers
-        corsConfiguration.addAllowedMethod("*") // allow all HTTP methods (POST, GET, etc.)
+        corsConfiguration.addAllowedOrigin("https://beerbrawl-pfeilheim-frontend.vercel.app")
+        corsConfiguration.addAllowedHeader("*")
+        corsConfiguration.addAllowedMethod("*")  // Explicitly allow all methods
 
         val source = UrlBasedCorsConfigurationSource()
         source.registerCorsConfiguration("/**", corsConfiguration)
