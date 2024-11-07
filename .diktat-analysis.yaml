@@ -1,0 +1,20 @@
+---
+- name: DIKTAT_COMMON
+  configuration:
+    domainName: at.beerbrawl.backend
+    testDirs: test
+    kotlinVersion: 2.0
+    srcDirectories: main
+
+- name: TRAILING_COMMA
+  enabled: true
+  configuration:
+    valueArgument: true
+    valueParameter: true
+
+- name: TYPE_ALIAS
+  enabled: false
+
+# Spring entities should not be data classes https://stackoverflow.com/questions/58127353/should-i-use-kotlin-data-class-as-jpa-entity
+- name: USE_DATA_CLASS
+  enabled: false
