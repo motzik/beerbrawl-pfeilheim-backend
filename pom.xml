@@ -257,6 +257,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -333,8 +334,7 @@
                 <version>${git-commit-id-plugin.version}</version>
                 <configuration>
                     <useNativeGit>true</useNativeGit>
-                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
-                    <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
                     <verbose>true</verbose>
                 </configuration>
                 <executions>
