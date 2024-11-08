@@ -8,7 +8,7 @@ class WebConfig: WebMvcConfigurer {
     @Override
     fun addCorsMapping(registry: CorsRegistry){
         registry.addMapping("/api/**") // Passe das Mapping an deine API an
-            .allowedOrigins("https://beerbrawl-pfeilheim-frontend.vercel.app") // Origin des Frontends
+            .allowedOrigins("*") // Erlaube alle Origin
             .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
             .allowedHeaders("*")
             .allowCredentials(true)
